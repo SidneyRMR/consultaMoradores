@@ -14,21 +14,32 @@ function App() {
       )
     );
   }
+  async function handleLimpar() {
+    setPesquisa('')
+    // handleSearch()
+  }
 
   return (
-    <View style={{backgroundColor: '#D3D3D3'}}>
-      <Text style={{fontSize: 32, marginTop: 35, textAlign: 'center', backgroundColor: '#708090'}}>Consulta de moradores</Text>
-      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 2}}>
-      <TextInput
-        value={pesquisa}
-        onChangeText={setPesquisa}
-        placeholder="Pesquisar por nome ou apto"
-        style={{backgroundColor: '#ffffff', padding: 8}}
-      />
-      <Button title="Pesquisar" onChangeText={handleSearch} onPress={handleSearch} />
+    <View style={{ backgroundColor: '#D3D3D3' , overflow: 'scroll'}}>
+      <Text style={{ fontSize: 29, marginTop: 35, textAlign: 'center', backgroundColor: '#708090' }}>CONSULTA DE MORADORES</Text>
+      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 2 }}>
+        <TextInput
+          value={pesquisa}
+          onChangeText={setPesquisa}
+          placeholder="Pesquisar por nome ou apto"
+          style={{ backgroundColor: '#ffffff', padding: 8 }}
+        />
+        <Button onPress={handleLimpar} title={"Limpar"} />
+        <Button title="Pesquisar" onPress={handleSearch} />
       </View>
-      <View style={{    flexDirection: 'row',
-    justifyContent: 'space-between', backgroundColor: '#778899',color: '#ffffff', padding: 10, fontSize:20}}>
+      <View style={{
+        flexDirection: 'row',
+        justifyContent: 'space-between', 
+        backgroundColor: '#778899', 
+        color: '#ffffff', 
+        padding: 10, 
+        fontSize: 20
+      }}>
         <Text >Bloco/Apto</Text>
         <Text >Nome</Text>
         <Text >Ações</Text>
@@ -38,14 +49,14 @@ function App() {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderWidth: 0.2}}>
-            <Text style={{ color: '#333', fontSize: 18, marginLeft: 10}}>{item.bloco}{' '}{item.apto}</Text>
+            <Text style={{ color: '#333', fontSize: 18, marginLeft: 10, marginRight: 20 }}>{item.bloco}{' '}{item.apto}</Text>
             <Text style={{ color: '#333', fontSize: 18, marginRight: 10 }}>{item.morador}</Text>
-            {/* flex: 1, textAlign: 'center' estes valores devem ser postos dentro do style do item.morador qunado acertar o botao editar */}
-            <Button style={{backgroundColor: '#EEE8AA'}}  title="Editar" />
+            <Button style={{ backgroundColor: '#EEE8AA' }} title="Editar" />
           </View>
-          )}
-      />
-    </View>
+        )}
+        />
+
+        </View>
   );
 }
 
