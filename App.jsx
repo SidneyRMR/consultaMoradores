@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { FlatList, View, Text, Button, TextInput } from 'react-native';
+import React, { useState } from 'react'
+import { FlatList, View, Text, Button, TextInput } from 'react-native'
 
 import moradores from './listaMoradores';
 
 function App() {
-  const [pesquisa, setPesquisa] = useState('');
-  const [resultado, setResultado] = useState(moradores);
+  const [pesquisa, setPesquisa] = useState('')
+  const [resultado, setResultado] = useState(moradores)
 
   function handleSearch() {
     setResultado(
@@ -29,8 +29,8 @@ function App() {
           placeholder="Pesquisar por nome ou apto"
           style={{ backgroundColor: '#ffffff', padding: 8 }}
         />
-        <Button onPress={handleLimpar} title={"Limpar"} />
-        <Button title="Pesquisar" onPress={handleSearch} />
+        <Button onPress={handleLimpar} title="Limpar" />
+        <Button onPress={handleSearch} title="Pesquisar"  />
       </View>
       <View style={{
         flexDirection: 'row',
@@ -51,7 +51,7 @@ function App() {
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderWidth: 0.2}}>
             <Text style={{ color: '#333', fontSize: 18, marginLeft: 10, marginRight: 20 }}>{item.bloco}{' '}{item.apto}</Text>
             <Text style={{ color: '#333', fontSize: 18, marginRight: 10 }}>{item.morador}</Text>
-            <Button style={{ backgroundColor: '#EEE8AA' }} title="Editar" />
+            <Button title="Editar" />
           </View>
         )}
         />

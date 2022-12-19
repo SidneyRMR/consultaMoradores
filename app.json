@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Consulta Moradores",
+    "name": "Consulta-Moradores",
     "slug": "consultaMoradores",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,6 +21,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.softside.condominio.moradores",
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
